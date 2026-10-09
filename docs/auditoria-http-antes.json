@@ -1,0 +1,74 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "url": "https://qravj.netlify.app/",
+    "type": "text/html; charset=UTF-8",
+    "robots": null,
+    "bytes": 9974
+  },
+  {
+    "path": "/robots.txt",
+    "status": 404,
+    "url": "https://qravj.netlify.app/robots.txt",
+    "type": "text/html; charset=utf-8",
+    "robots": null,
+    "bytes": 3449
+  },
+  {
+    "path": "/sitemap.xml",
+    "status": 200,
+    "url": "https://qravj.netlify.app/sitemap.xml",
+    "type": "application/xml",
+    "robots": null,
+    "bytes": 269
+  },
+  {
+    "path": "/styles.css?v=5",
+    "status": 200,
+    "url": "https://qravj.netlify.app/styles.css?v=5",
+    "type": "text/css; charset=UTF-8",
+    "robots": null,
+    "bytes": 19586
+  },
+  {
+    "path": "/vendor/qrcode.js",
+    "status": 200,
+    "url": "https://qravj.netlify.app/vendor/qrcode.js",
+    "type": "application/javascript; charset=UTF-8",
+    "robots": null,
+    "bytes": 56694
+  },
+  {
+    "path": "/vendor/supabase.js",
+    "status": 200,
+    "url": "https://qravj.netlify.app/vendor/supabase.js",
+    "type": "application/javascript; charset=UTF-8",
+    "robots": null,
+    "bytes": 116087
+  },
+  {
+    "path": "/assets/avj-logo.png",
+    "status": 200,
+    "url": "https://qravj.netlify.app/assets/avj-logo.png",
+    "type": "image/png",
+    "robots": null,
+    "bytes": 1918798
+  },
+  {
+    "path": "/seo-no-existe-20261009",
+    "status": 404,
+    "url": "https://qravj.netlify.app/seo-no-existe-20261009",
+    "type": "text/html; charset=utf-8",
+    "robots": null,
+    "bytes": 3449
+  },
+  {
+    "path": "/?q=no-valido",
+    "status": 200,
+    "url": "https://qravj.netlify.app/?q=no-valido",
+    "type": "text/html; charset=UTF-8",
+    "robots": null,
+    "bytes": 9974
+  }
+]

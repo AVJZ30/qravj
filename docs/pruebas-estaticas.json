@@ -1,0 +1,11 @@
+{
+  "html_checked": 9,
+  "sitemap_urls": 8,
+  "passed": [
+    "Local links and assets exist",
+    "Unique IDs",
+    "One canonical per public HTML",
+    "Valid JSON-LD, sitemap XML, manifest JSON and Netlify TOML",
+    "config.js and guest.js byte-identical to originals"
+  ]
+}

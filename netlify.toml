@@ -1,0 +1,9 @@
+[build]
+  publish = "public"
+
+[[edge_functions]]
+  function = "qr-indexing"
+  path = "/*"
+
+[context.deploy-preview]
+  # No build command: ready-to-serve static HTML.

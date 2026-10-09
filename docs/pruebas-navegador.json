@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-09T17:44:06.422Z",
+  "scope": "Local, Chromium. Supabase simulado; no verifica Auth/RLS/base de datos reales.",
+  "passed": [
+    "Portada visible y meta robots pública",
+    "Generación QR sin cuenta y descarga real PNG/SVG",
+    "Registro simulado; validación confirmación y apertura panel",
+    "Panel autenticado marcado noindex",
+    "Crear QR dinámico, editar destino conservando URL y descargar PNG/SVG (Supabase simulado)",
+    "Pausar, activar y buscar (Supabase simulado)",
+    "Inicio y cierre de sesión simulados",
+    "QR inválido, noindex y pantalla de error",
+    "QR pausado/inexistente con RPC simulado",
+    "Redirección efectiva a destino devuelto por RPC simulado",
+    "8 páginas HTTP 200 locales, títulos/canonical, lectura sin JS, sin desbordamiento a 390px",
+    "Sin errores JavaScript en los flujos ejecutados"
+  ]
+}

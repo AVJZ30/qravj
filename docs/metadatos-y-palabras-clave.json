@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://qravj.netlify.app/",
+    "title": "Generador de códigos QR gratis, PNG y SVG | AVJ QR Studio",
+    "description": "Crea códigos QR de enlaces gratis y sin registro. Descarga PNG o SVG, o entra con tu cuenta para crear y administrar QR dinámicos en AVJ QR Studio.",
+    "primary": "generador de códigos QR",
+    "secondary": "generador QR online; crear QR gratis; generar QR gratis; generador QR en español; AVJ QR Studio; AVJ COMUNITY QR"
+  },
+  {
+    "url": "https://qravj.netlify.app/crear-codigo-qr/",
+    "title": "Crear un código QR de un enlace: paso a paso | AVJ",
+    "description": "Aprende a convertir una URL en un código QR con AVJ QR Studio, descargarlo en PNG o SVG y elegir entre un QR directo y uno dinámico.",
+    "primary": "crear código QR",
+    "secondary": "convertir enlace a QR; convertir URL a código QR; código QR para enlaces; generar QR sin complicaciones"
+  },
+  {
+    "url": "https://qravj.netlify.app/qr-dinamico/",
+    "title": "QR dinámico: cambiar el enlace sin reimprimir | AVJ",
+    "description": "Descubre cómo funciona un QR dinámico en AVJ QR Studio y cómo actualizar su destino desde tu cuenta conservando la misma imagen del código.",
+    "primary": "crear QR dinámico",
+    "secondary": "crear QR editable; cambiar enlace de un QR; modificar destino de QR"
+  },
+  {
+    "url": "https://qravj.netlify.app/descargar-qr/",
+    "title": "Descargar códigos QR en PNG y SVG | AVJ QR Studio",
+    "description": "Descarga tu código QR en PNG o SVG. Compara los formatos, aprende a exportar desde el generador o el panel y prepara la imagen para impresión.",
+    "primary": "descargar código QR",
+    "secondary": "descargar QR PNG; descargar QR SVG"
+  },
+  {
+    "url": "https://qravj.netlify.app/administrar-codigos-qr/",
+    "title": "Administrar y editar tus códigos QR | AVJ QR Studio",
+    "description": "Aprende a crear tu cuenta, buscar códigos QR, editar destinos y pausar o activar enlaces desde el panel personal de AVJ QR Studio.",
+    "primary": "administrar códigos QR",
+    "secondary": "gestor de códigos QR; AVJ QR Studio; AVJ COMUNITY QR"
+  },
+  {
+    "url": "https://qravj.netlify.app/qr-para-negocios/",
+    "title": "Códigos QR para negocios, catálogos y promociones | AVJ",
+    "description": "Ideas para usar códigos QR en catálogos digitales, redes sociales y promociones. Elige el destino, prueba la impresión y actualiza enlaces dinámicos.",
+    "primary": "crear códigos QR para negocios",
+    "secondary": "QR para catálogos digitales; QR para redes sociales; QR para promociones; QR para páginas web"
+  },
+  {
+    "url": "https://qravj.netlify.app/blog/que-es-un-codigo-qr/",
+    "title": "Qué es un código QR y para qué sirve | AVJ QR Studio",
+    "description": "Conoce qué es un código QR, cómo lo lee un teléfono y para qué sirve al compartir enlaces de páginas web, catálogos o redes sociales.",
+    "primary": "qué es un código QR",
+    "secondary": "para qué sirve un código QR; qué es un generador de códigos QR"
+  },
+  {
+    "url": "https://qravj.netlify.app/blog/qr-estatico-vs-dinamico/",
+    "title": "QR estático vs. dinámico: diferencias y usos | AVJ",
+    "description": "Compara QR estáticos y dinámicos: edición del destino, uso sin cuenta, dependencia del servicio y elección antes de imprimir un código QR.",
+    "primary": "QR estático vs dinámico",
+    "secondary": "diferencia entre QR estático y dinámico; crear QR permanente"
+  }
+]
