@@ -4,6 +4,15 @@
  const $ = id => document.getElementById(id);
  let current = null, generation = 0;
  const submit = $('guest-form').querySelector('button[type="submit"]');
+
+ // Brillo del botón "Generar QR" siguiendo al cursor
+ const guestBtn = submit;
+ guestBtn?.addEventListener('pointermove', (e) => {
+  const r = guestBtn.getBoundingClientRect();
+  guestBtn.style.setProperty('--mx', `${e.clientX - r.left}px`);
+  guestBtn.style.setProperty('--my', `${e.clientY - r.top}px`);
+ });
+
  function busy(value) { $('guest-loading').hidden = !value; submit.disabled = value; $('guest-form').setAttribute('aria-busy', String(value)); submit.textContent = value ? 'Generando…' : 'Generar código QR'; }
  function save(blob, name) {
   const url = URL.createObjectURL(blob), a = document.createElement('a');
