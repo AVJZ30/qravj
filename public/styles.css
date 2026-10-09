@@ -16,3 +16,18 @@
 .seo-access{margin:12px 0;font-size:13px;line-height:1.5;position:relative;z-index:1}.seo-access summary{cursor:pointer}.seo-access a{display:inline-block;margin:7px 12px 0 0}.guide-shell{max-width:980px;margin:auto;padding:28px 24px 60px}.guide-header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:32px}.guide-header .brand{white-space:normal}.guide-article{background:#fff;border:1px solid var(--border);border-radius:18px;padding:clamp(22px,5vw,52px)}.guide-article h1{font-size:clamp(28px,5vw,44px);line-height:1.2}.guide-article h2{margin-top:32px;font-size:24px}.guide-article p,.guide-article li{line-height:1.8}.guide-article li{margin-bottom:10px}.guide-article a,.guide-links a{color:#6630d9;text-underline-offset:3px}.guide-links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:24px;font-size:14px}.breadcrumbs{font-size:14px;margin-bottom:24px}.table-scroll{overflow:auto}table{border-collapse:collapse;width:100%;margin:20px 0}caption{text-align:left;font-weight:bold;padding-bottom:12px}th,td{padding:14px;border:1px solid var(--border);text-align:left;vertical-align:top;line-height:1.5}.guide-footer{margin-top:28px;font-size:13px}.guide-cta{display:inline-block;text-decoration:none;margin-top:16px}.qr-redirect #auth-screen{display:none!important}@media(max-width:540px){.guide-header{align-items:flex-start;flex-direction:column}.guide-shell{padding:20px 16px}.guide-article{padding:22px 18px}}
 .seo-access .guide-links{margin-top:8px;gap:4px 12px}.seo-access .guide-links a{color:inherit}
 .guide-article .guide-cta{color:#fff}.table-scroll:focus-visible{outline:3px solid #af8eff;outline-offset:4px}@media(max-width:540px){.table-scroll:before{content:'Desliza la tabla para ver todas las columnas →';display:block;font-size:13px;color:var(--muted);margin-bottom:8px}.table-scroll table{min-width:520px}}
+
+/* Respuesta breve: solo transform/opacity, sin pausas ni cambios de distribución. */
+button,.guide-cta{transition:transform 140ms ease,background-color 140ms ease,border-color 140ms ease,opacity 140ms ease}
+button:active:not(:disabled),.guide-cta:active{transform:scale(.985)}
+.auth-screen:not([hidden]) .guest-generator,.auth-screen:not([hidden]) .auth-form-inner{animation:avj-soft-in 220ms ease-out both}
+.auth-art .brand-logo{animation:avj-soft-in 200ms ease-out both}
+#guest-result:not([hidden]),#guest-result:not([hidden]) .guest-qr,#guest-result:not([hidden]) .download-actions{animation:avj-soft-in 180ms ease-out both}
+#login-form:not([hidden]),#signup-form:not([hidden]),dialog[open],.toast:not([hidden]),.guide-article{animation:avj-soft-in 180ms ease-out both}
+dialog[open]::backdrop{animation:avj-fade-in 140ms ease-out both}
+button.is-loading{position:relative;padding-right:46px;cursor:progress;opacity:.9}
+button.is-loading::after{content:'';position:absolute;right:18px;top:50%;width:16px;height:16px;margin-top:-8px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:spin 650ms linear infinite}
+@media(hover:hover){button:hover:not(:disabled),.guide-cta:hover{transform:translateY(-1px)}.guest-generator button:hover:not(:disabled){transform:translateY(-1px);box-shadow:none}.brand-logo:hover{transform:none}}
+@keyframes avj-soft-in{from{opacity:.65;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@keyframes avj-fade-in{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}button,.guide-cta,.guest-generator button{transform:none!important}}
