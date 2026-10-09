@@ -2,7 +2,7 @@
 (() => {
  'use strict';
  const $ = id => document.getElementById(id);
- let current = null, generation = 0;
+ let current = null, generation = 0, thanksShown = false;
  const submit = $('guest-form').querySelector('button[type="submit"]');
 
  // Brillo del botón "Generar QR" siguiendo al cursor
@@ -11,6 +11,26 @@
   const r = guestBtn.getBoundingClientRect();
   guestBtn.style.setProperty('--mx', `${e.clientX - r.left}px`);
   guestBtn.style.setProperty('--my', `${e.clientY - r.top}px`);
+ });
+
+ // Modal de agradecimiento
+ function openThanks() {
+  const modal = $('thanks-modal');
+  if (!modal) return;
+  try { modal.showModal(); } catch { /* ya abierto o no soportado */ }
+ }
+ function closeThanks() {
+  const modal = $('thanks-modal');
+  if (modal && modal.open) modal.close();
+ }
+
+ // Cerrar el modal de agradecimiento
+ document.querySelectorAll('[data-close="thanks-modal"]').forEach(btn => {
+  btn.addEventListener('click', closeThanks);
+ });
+ // Cerrar al hacer click fuera
+ $('thanks-modal')?.addEventListener('click', (e) => {
+  if (e.target === $('thanks-modal')) closeThanks();
  });
 
  function busy(value) { $('guest-loading').hidden = !value; submit.disabled = value; $('guest-form').setAttribute('aria-busy', String(value)); submit.textContent = value ? 'Generando…' : 'Generar código QR'; }
@@ -38,6 +58,13 @@
    $('guest-qr').querySelector('svg').setAttribute('role', 'img');
    current = {qr, svg}; $('guest-destination').textContent = url.href;
    $('guest-result').hidden = false; $('guest-status').textContent = 'Tu QR está listo para descargar.';
+
+   // Mostrar el modal de agradecimiento después de generar
+   // (solo una vez por sesión para no ser molesto)
+   setTimeout(() => {
+     if (!thanksShown) { thanksShown = true; openThanks(); }
+   }, 700);
+
   } catch (error) { $('guest-error').textContent = error instanceof TypeError ? 'Escribe un enlace completo, por ejemplo https://tupagina.com.' : error.message; } finally { if (attempt === generation) busy(false); }
  });
  $('guest-svg').onclick = () => { if (current) save(new Blob([current.svg], {type: 'image/svg+xml'}), 'avj-qr.svg'); };
