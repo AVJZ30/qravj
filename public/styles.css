@@ -31,3 +31,171 @@ button.is-loading::after{content:'';position:absolute;right:18px;top:50%;width:1
 @keyframes avj-soft-in{from{opacity:.65;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 @keyframes avj-fade-in{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}button,.guide-cta,.guest-generator button{transform:none!important}}
+/* ============================================================
+   AVJ QR STUDIO · Mejoras de animación y espaciado
+   ============================================================ */
+
+/* ---------- Aire extra bajo el botón "Generar QR" ---------- */
+#guest-form {
+  display: flex;
+  flex-direction: column;
+}
+#guest-form > .primary.full {
+  margin-top: 28px;
+}
+.guest-generator .guest-help { margin-top: 26px; }
+
+/* ---------- Transiciones globales más vivas ---------- */
+button,
+.primary,
+.secondary,
+.icon-button,
+.nav-item,
+.filter,
+.qr-card,
+.card-visual,
+input,
+textarea,
+dialog {
+  transition:
+    transform .28s cubic-bezier(.2, .8, .2, 1),
+    box-shadow .28s ease,
+    background-color .2s ease,
+    border-color .25s ease,
+    color .2s ease,
+    opacity .25s ease;
+}
+
+/* ---------- Botones con "lift" suave ---------- */
+@media (hover: hover) {
+  .primary:hover:not(:disabled),
+  .secondary:hover:not(:disabled) { transform: translateY(-2px); }
+  .primary:hover:not(:disabled) {
+    box-shadow: 0 12px 28px -12px rgba(112, 55, 245, .55);
+  }
+  .secondary:hover:not(:disabled) {
+    box-shadow: 0 10px 24px -14px rgba(38, 22, 65, .35);
+  }
+  .icon-button:hover { transform: translateY(-1px); }
+}
+button:active:not(:disabled) { transform: translateY(0) scale(.98); }
+
+/* ---------- Tarjetas QR: entrada escalonada ---------- */
+.qr-grid .qr-card {
+  animation: qr-card-in .55s cubic-bezier(.2, .8, .2, 1) both;
+  will-change: transform, opacity;
+}
+.qr-grid .qr-card:nth-child(1) { animation-delay: .03s; }
+.qr-grid .qr-card:nth-child(2) { animation-delay: .07s; }
+.qr-grid .qr-card:nth-child(3) { animation-delay: .11s; }
+.qr-grid .qr-card:nth-child(4) { animation-delay: .15s; }
+.qr-grid .qr-card:nth-child(5) { animation-delay: .19s; }
+.qr-grid .qr-card:nth-child(6) { animation-delay: .23s; }
+.qr-grid .qr-card:nth-child(7) { animation-delay: .27s; }
+.qr-grid .qr-card:nth-child(8) { animation-delay: .31s; }
+.qr-grid .qr-card:nth-child(n+9) { animation-delay: .34s; }
+
+@keyframes qr-card-in {
+  from { opacity: 0; transform: translateY(16px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);   }
+}
+
+@media (hover: hover) {
+  .qr-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 22px 45px -20px rgba(38, 22, 65, .35);
+  }
+  .qr-card:hover .card-visual { transform: scale(1.03); }
+}
+
+/* ---------- Estadísticas con entrada suave ---------- */
+.stats .stat {
+  animation: qr-card-in .6s cubic-bezier(.2, .8, .2, 1) both;
+}
+.stats .stat:nth-child(1) { animation-delay: .02s; }
+.stats .stat:nth-child(2) { animation-delay: .08s; }
+.stats .stat:nth-child(3) { animation-delay: .14s; }
+
+/* ---------- Punto pulsante en los QR activos ---------- */
+.badge { position: relative; padding-left: 20px; }
+.badge:not(.paused)::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22b573;
+  box-shadow: 0 0 0 0 rgba(34, 181, 115, .55);
+  animation: badge-pulse 2.2s ease-out infinite;
+}
+@keyframes badge-pulse {
+  0%   { box-shadow: 0 0 0 0    rgba(34, 181, 115, .55); }
+  70%  { box-shadow: 0 0 0 8px rgba(34, 181, 115, 0);    }
+  100% { box-shadow: 0 0 0 0    rgba(34, 181, 115, 0);    }
+}
+
+/* ---------- Modales con entrada elegante ---------- */
+dialog[open]          { animation: dialog-in .38s cubic-bezier(.2, .8, .2, 1) both; }
+dialog[open]::backdrop { animation: dialog-backdrop-in .3s ease both; }
+@keyframes dialog-in {
+  from { opacity: 0; transform: translateY(18px) scale(.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);   }
+}
+@keyframes dialog-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---------- Inputs con foco vivo ---------- */
+input:focus,
+textarea:focus { transform: translateY(-1px); }
+
+/* ---------- Botón "Generar QR": brillo que sigue al cursor ---------- */
+#guest-form .primary.full {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+#guest-form .primary.full::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    140px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(112, 55, 245, .22),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+#guest-form .primary.full:hover::after { opacity: 1; }
+
+/* ---------- Mensajes y toasts con aparición suave ---------- */
+#guest-error:not(:empty),
+.form-message:not(:empty),
+.toast:not([hidden]) {
+  animation: fade-up .3s cubic-bezier(.2, .8, .2, 1) both;
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ---------- Iconos de stats con pequeño giro al hover ---------- */
+@media (hover: hover) {
+  .stat .stat-icon { transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+  .stat:hover .stat-icon { transform: scale(1.08) rotate(-4deg); }
+}
+
+/* ---------- Accesibilidad: respetar prefers-reduced-motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
