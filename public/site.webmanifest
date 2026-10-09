@@ -1,23 +1,17 @@
 {
-  "name": "AVJ QR Studio",
-  "short_name": "AVJ QR",
-  "icons": [
-    {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "theme_color": "#7037f5",
-  "background_color": "#f7f7fb",
-  "display": "standalone",
-  "lang": "es",
+  "name": "AVJ QR Studio · Generador de códigos QR gratis",
+  "short_name": "QR Studio",
+  "description": "Generador de códigos QR gratis online con descarga PNG y SVG sin registro.",
   "start_url": "/",
   "scope": "/",
-  "description": "Generador y gestor de códigos QR de AVJ COMUNITY"
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#7037f5",
+  "lang": "es",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    { "src": "assets/avj-logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/avj-logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
 }
