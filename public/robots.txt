@@ -1,4 +1,18 @@
+# robots.txt · AVJ QR Studio
 User-agent: *
 Allow: /
+Disallow: /?q=
+Disallow: /vendor/
+Disallow: /sql/
+Disallow: /*.json$
+Disallow: /google*.html
 
-Sitemap: https://qravj.netlify.app/sitemap.xml
+# Bots de IA (descomenta si quieres bloquearlos)
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+# User-agent: Google-Extended
+# Disallow: /
+
+Sitemap: https://qronlin.netlify.app/sitemap.xml
